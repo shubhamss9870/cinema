@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title%}
+New
+{% endblock title %}
+
+{% block body %}
+
+<div class="container bor">
+    <div class="row c ">
+				<div class="container l">
+					{% for video in char %}
+					<iframe  style="margin-bottom:3px;margin-right:5px"  src="https://xhamster18.desi/videos/{{ video.video_title }}" width="320" height="200" title="Twinkle Twinkle Little Star + More Nursery Rhymes & Kids Songs - CoComelon" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="margin-left:5px;" allowfullscreen></iframe>
+				{% endfor %}
+
+                </div>
+            </div>
+</div>
+
+{% endblock body %}

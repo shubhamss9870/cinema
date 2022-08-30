@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title%}
+Home
+{% endblock title %}
+
+{% block body %}
+<!-- card body --->
+<div class="container bor">
+    <div class="row c ">
+				<div class="container l">
+					{% for video in list %}
+					<iframe  style="margin-bottom:3px;margin-right:5px"  src="https://xhamster18.desi/videos/{{ video.video_title }}" width="320" height="200" title="Twinkle Twinkle Little Star + More Nursery Rhymes & Kids Songs - CoComelon" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="margin-left:5px;" allowfullscreen></iframe>
+				{% endfor %}
+
+                </div>
+            </div>
+</div>
+<!-- for pagination of pages -->
+
+
+<!-- end here -->
+<div style="margin-left:600px" class="mt-2">
+	<nav aria-label="Page navigation example">
+  <ul class="pagination">
+		{%if list.has_previous %} {# whether the previous page exists #}
+		<li class="page-item">	<a class="page-link" href="?page={{list.previous_page_number}}">Previous</a> {# link to the prev page #}
+		{% endif %}</li>
+		<li class="page-item"><span  ><a class="page-link" href="?page={{list.number}}">{{list.number}}</a></span></li> {# the current page number #}
+
+		{%if list.has_next %} {# whether the next page exists #}
+		<li class="page-item">	<a class="page-link" href="?page={{list.next_page_number}}">Next</a> {# link to the next page #}
+		{% endif %}</li>
+	  </ul>
+</nav>
+	</div>
+
+
+
+{% endblock body %}
